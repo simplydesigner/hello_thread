@@ -1,15 +1,15 @@
-//
-//  main.cpp
-//  hello_thread
-//
-//  Created by simplydesigner on 8/23/16.
-//  Copyright © 2016 simplydesigner. All rights reserved.
-//
-
 #include <iostream>
+#include <thread>
+
+void hello()
+{
+    std::cout << "hello" << std::endl;
+}
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+
+    std::thread thread(hello);
+    thread.join();  
+    
     return 0;
 }
